@@ -1,0 +1,15 @@
+.twocolumn_wrapper {
+    display: flex;
+    flex-direction: row;
+}
+  
+.twocolumn_wrapper .twocolumn_left {
+    width: 47.5%;
+    height: auto;
+    margin-right: 5%;
+}
+
+.twocolumn_wrapper .twocolumn_right {
+    width: 47.5%;
+    height: auto;
+}
