@@ -1,0 +1,8 @@
+pre_mainloop_hooks: []
+post_mainloop_hooks: []
+pre_rollout_hooks: []
+post_rollout_hooks: []
+pre_model_learning_hooks: []
+post_model_learning_hooks: []
+pre_controller_learning_hooks: []
+post_controller_learning_hooks: []

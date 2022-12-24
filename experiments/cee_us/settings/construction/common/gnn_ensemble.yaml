@@ -1,0 +1,26 @@
+forward_model: ParallelGNNDeterministicEnsemble
+forward_model_params:
+    model_params:
+        n: 5
+        hidden_dim: 128
+        num_layers: 2
+        layer_norm: true
+        num_message_passing: 1
+        act_fn: "relu"
+        output_act_fn: "none"
+    train_params:
+        batch_size: 125
+        epochs: 25
+        iterations: 0
+        learning_rate: 0.00001
+        weight_decay: 0.001
+        optimizer: "Adam"
+        bootstrapped: false
+        train_epochs_only_with_latest_data: false
+    use_input_normalization: true
+    use_output_normalization: true
+    target_is_delta: true
+    normalize_w_running_stats: false
+    
+
+

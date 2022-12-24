@@ -1,0 +1,26 @@
+forward_model: ParallelNNDeterministicEnsemble
+forward_model_params:
+    model_params:
+        n: 5
+        num_layers: 3
+        hidden_dim: 256
+        act_fn: "silu"
+        output_act_fn: "none"
+        weight_initializer: "torch_truncated_normal"
+        bias_initializer: "constant_zero"
+    train_params:
+        optimizer: "Adam"
+        weight_decay: 0.00005
+        learning_rate: 0.0001
+        batch_size: 256
+        epochs: 50
+        iterations: 0
+        train_epochs_only_with_latest_data: false
+        bootstrapped: false
+        grad_norm: null
+    use_input_normalization: true
+    use_output_normalization: true
+    target_is_delta: true
+    normalize_w_running_stats: false
+
+

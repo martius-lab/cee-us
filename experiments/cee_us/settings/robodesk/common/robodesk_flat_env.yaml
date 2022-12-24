@@ -1,0 +1,5 @@
+env: "RobodeskFlat"
+env_params:
+  task: "open_slide"
+  reward: "dense"
+  obs_type: "state"

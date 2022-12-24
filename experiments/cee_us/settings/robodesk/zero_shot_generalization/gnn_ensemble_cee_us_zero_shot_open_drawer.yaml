@@ -1,0 +1,21 @@
+__import__:
+    - "experiments/defaults.yaml"
+    - "experiments/cee_us/settings/common/basic.yaml"
+    - "experiments/cee_us/settings/robodesk/zero_shot_generalization/common/basic_gnn_ensemble_zero_shot.yaml"    
+    - "experiments/cee_us/settings/robodesk/zero_shot_generalization/common/controller_tasks.yaml"
+
+env_params:
+  task: "open_drawer" 
+
+rollout_params:
+  task_horizon: 250
+
+forward_model_init: 
+    pretrainer: null
+    pickle_path: "/is/sg2/csancaktar/remotes/cluster_work/results/robodesk/curious_exploration/gnn_ensemble_epochs_longer_horizon2/working_directories/20/checkpoints_latest/forward_model"
+
+number_of_rollouts: 100
+
+working_dir: "results/cee_us/zero_shot/robodesk_open_drawer/gnn_ensemble_icem"
+
+device: "cuda:0"

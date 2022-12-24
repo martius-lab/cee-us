@@ -1,0 +1,68 @@
+__import__: 
+   - "experiments/cee_us/settings/robodesk/common/robodesk_env.yaml"
+
+env: "Robodesk"
+env_params:
+  task: "open_slide"  
+  reward: "dense" 
+
+# Task choices: [open_slide, flat_block_off_table, open_drawer, push_green, push_red...]
+
+rollout_params:
+  render: false
+  render_initial: false
+  render_eval: false
+  record: false
+  only_final_reward: false
+  use_env_states: true
+  logging: true
+  task_horizon: 250
+
+controller: "mpc-icem-torch"
+controller_params:
+  horizon: 40
+  num_simulated_trajectories: 64
+  factor_decrease_num: 1
+  cost_along_trajectory: "sum"
+  use_env_reward: false
+  action_sampler_params: 
+    opt_iterations: 3
+    elites_size: 5
+    alpha: 0.1
+    init_std: 0.5
+    relative_init: true
+    execute_best_elite: true
+    keep_previous_elites: true
+    shift_elites_over_time: true
+    finetune_first_action: false
+    fraction_elites_reused: 0.3
+    use_mean_actions: true
+    colored_noise: true
+    noise_beta: 3.5
+    use_ensemble_cost_std: false
+  verbose: false
+  do_visualize_plan: false
+  use_async_action: false
+  logging: true
+
+horizon: 40
+
+initial_controller: "none"
+initial_controller_params: {}
+initial_number_of_rollouts: 0
+
+number_of_rollouts: 100
+training_iterations: 1
+
+append_data: true
+append_data_eval: false
+
+checkpoints:
+  load: false
+  save: true
+  save_every_n_iter: 2
+  restart_every_n_iter: null
+
+device: "cuda:0"
+
+working_dir: "results/cee_us/robodesk/zero_shot/open_slide"

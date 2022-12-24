@@ -1,0 +1,32 @@
+"__import__": "experiments/defaults.yaml"
+
+post_rollout_hooks: []
+
+rollout_params:
+  render: false
+  render_initial: false
+  render_eval: false
+  record: false
+  only_final_reward: false
+  use_env_states: true
+  logging: true
+
+initial_controller: "none"
+initial_controller_params: {}
+initial_number_of_rollouts: 0
+number_of_rollouts: 5
+append_data: true
+append_data_eval: false
+training_iterations: 500
+plot_model_accuracy: false
+forward_model: "none"
+model_breakdown_above: 0.1
+evaluation_rollouts: 0
+
+checkpoints:
+  load: false
+  save: true
+  save_every_n_iter: 50
+  restart_every_n_iter: null
+
+device: "cpu"

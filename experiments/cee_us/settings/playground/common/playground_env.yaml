@@ -1,0 +1,8 @@
+env: "PlaygroundwGoals"
+env_params:
+   num_cube: 1
+   num_cube_light: 1
+   num_cylinder: 1
+   num_pyramid: 1
+   playground_size: 2.0
+   goal_case: "random"

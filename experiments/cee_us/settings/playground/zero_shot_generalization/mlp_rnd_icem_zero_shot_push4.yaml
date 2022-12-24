@@ -1,0 +1,24 @@
+__import__:
+    - "experiments/defaults.yaml"
+    - "experiments/cee_us/settings/common/basic.yaml"
+    - "experiments/cee_us/settings/playground/zero_shot_generalization/common/basic_mlp_model_zero_shot.yaml"
+    - "experiments/cee_us/settings/playground/zero_shot_generalization/common/controller_push.yaml"
+
+# Make sure the settings for the model specified in 
+# "experiments/cee_us/settings/construction/zero_shot_generalization/common/basic_gnn_ensemble_zero_shot.yaml"
+# and the loaded model settings match! You can also overwrite the forward_model_params in this file!
+# forward_model_params:
+#    model_params: 
+#       ...
+
+forward_model_init: 
+    pretrainer: null
+    pickle_path: "" # The trained model path goes here: e.g. {RESULTS_DIR}/checkpoints_latest/forward_model
+
+number_of_rollouts: 100
+
+working_dir: "results/cee_us/zero_shot/playground_push4/mlp_rnd_icem"
+
+seed: 2775251499
+
+device: "cuda:0"

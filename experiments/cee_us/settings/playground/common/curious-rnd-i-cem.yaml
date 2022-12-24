@@ -1,0 +1,40 @@
+controller: "mpc-rnd-icem-torch"
+controller_params:
+  horizon: 30
+  num_simulated_trajectories: 128
+  factor_decrease_num: 1
+  cost_along_trajectory: "sum"
+  use_env_reward: false
+  action_sampler_params: 
+    opt_iterations: 3
+    elites_size: 10
+    alpha: 0.1
+    init_std: 0.8
+    relative_init: true
+    execute_best_elite: true
+    keep_previous_elites: false
+    shift_elites_over_time: false
+    finetune_first_action: false
+    fraction_elites_reused: 0.1
+    use_mean_actions: true
+    colored_noise: true
+    noise_beta: 3.5
+    use_ensemble_cost_std: false
+  verbose: false
+  do_visualize_plan: false
+  use_async_action: false
+  logging: true
+  model_params:
+    num_layers_predictor: 1
+    num_layers_target: 1
+    rnd_hidden_dim: 256
+    rnd_rep_dim: 128
+    rnd_network_type: "mlp"
+  train_params:
+    learning_rate: 0.0001
+    batch_size: 256
+    rnd_epochs: true
+    rnd_num_epochs_or_its: 10
+    
+
+

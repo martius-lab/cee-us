@@ -1,0 +1,25 @@
+__import__:
+    - "experiments/defaults.yaml"
+    - "experiments/cee_us/settings/common/basic.yaml"
+    - "experiments/cee_us/settings/construction/common/gnn_model.yaml"
+
+pre_mainloop_hooks: [
+   ["experiments.cee_us.hooks.pre_mainloop_hooks.init_model:init_model_hook"],
+   ["experiments.cee_us.hooks.pre_mainloop_hooks.fill_model_eval_buffer:fill_model_eval_buffer_hook"],
+   ["experiments.cee_us.hooks.pre_mainloop_hooks.print_buffer_size:print_buffer_size_hook"]
+]
+
+post_rollout_hooks: [] 
+
+forward_model_params:
+    train_params:
+        epochs: 0
+        iterations: 0
+
+forward_model_init: 
+    pretrainer: null
+    pickle_path: ""
+    
+eval_buffers: []
+
+device: "cuda:0"

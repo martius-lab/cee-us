@@ -1,0 +1,33 @@
+__import__:
+    - "experiments/defaults.yaml"
+    - "experiments/cee_us/settings/common/basic.yaml"
+    - "experiments/cee_us/settings/playground/zero_shot_generalization/common/basic_gnn_ensemble_zero_shot.yaml"    
+    - "experiments/cee_us/settings/playground/zero_shot_generalization/common/controller_push.yaml"
+
+env_params:
+   num_cube: 1
+   num_cube_light: 1
+   num_cylinder: 2
+   num_pyramid: 2
+
+rollout_params:
+  task_horizon: 700
+
+# Make sure the settings for the model specified in 
+# "experiments/cee_us/settings/construction/zero_shot_generalization/common/basic_gnn_ensemble_zero_shot.yaml"
+# and the loaded model settings match! You can also overwrite the forward_model_params in this file!
+# forward_model_params:
+#    model_params: 
+#       ...
+
+forward_model_init: 
+    pretrainer: null
+    pickle_path: "results/cee_us/playground/gnn_ensemble_cee_us_freeplay/checkpoints_249/forward_model"
+
+number_of_rollouts: 100
+
+seed: 2775251499
+
+working_dir: "results/cee_us/zero_shot/playground_push6/gnn_ensemble_icem"
+
+device: "cuda:0"

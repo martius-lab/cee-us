@@ -1,0 +1,46 @@
+__import__:
+    - "experiments/defaults.yaml"
+    - "experiments/cee_us/settings/common/basic.yaml"
+    - "experiments/cee_us/settings/common/curious-rnd-i-cem.yaml"
+    - "experiments/cee_us/settings/robodesk/common/robodesk_flat_env.yaml"
+    - "experiments/cee_us/settings/robodesk/common/mlp_model.yaml"
+
+pre_mainloop_hooks: [
+   ["experiments.cee_us.hooks.pre_mainloop_hooks.init_model:init_model_hook"],
+   ["experiments.cee_us.hooks.pre_mainloop_hooks.fill_model_eval_buffer:fill_model_eval_buffer_hook"],
+   ["experiments.cee_us.hooks.pre_mainloop_hooks.print_buffer_size:print_buffer_size_hook"]
+]
+
+post_rollout_hooks: [
+   ["experiments.cee_us.hooks.post_rollout_hooks.interaction_metrics_robodesk_flat:interaction_tracker_hook", 
+   {
+      "plot_trajs": false
+   }
+   ],
+   ["experiments.cee_us.hooks.post_rollout_hooks.train_rnd_module:train_rnd_module_hook"]
+] 
+
+eval_buffers: []
+
+number_of_rollouts: 10
+training_iterations: 300
+
+rollout_params:
+    render: false
+    task_horizon: 200
+
+horizon: 30
+
+controller_params:
+  horizon: 30
+  num_simulated_trajectories: 64
+  action_sampler_params: 
+    elites_size: 5
+
+checkpoints:
+    save_every_n_iter: 25
+
+working_dir: "results/cee_us/robodesk/mlp_rnd_icem_freeplay"
+
+device: "cuda:0"
+
