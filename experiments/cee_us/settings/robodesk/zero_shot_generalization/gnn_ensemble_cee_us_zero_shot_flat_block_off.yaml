@@ -12,7 +12,7 @@ rollout_params:
 
 forward_model_init: 
     pretrainer: null
-    pickle_path: "/is/sg2/csancaktar/remotes/cluster_work/results/robodesk/curious_exploration/gnn_ensemble_epochs_longer_horizon2/working_directories/20/checkpoints_latest/forward_model"
+    pickle_path: "" # The trained model path goes here: e.g. {RESULTS_DIR}/checkpoints_latest/forward_model
 
 number_of_rollouts: 100
 
