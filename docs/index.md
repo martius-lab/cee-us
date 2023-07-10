@@ -1,4 +1,6 @@
-## Curious Exploration via Structured World Models Yields Zero-Shot Object Manipulation
+<h2 align="center">Curious Exploration via Structured World Models Yields Zero-Shot Object Manipulation</h2>
+<h4 align="center">Cansu Sancaktar, Sebastian Blaes and Georg Martius <br/> 
+    <a href="https://al.is.mpg.de">Autonomous Learning Group</a>, MPI for Intelligent Systems </h4>
 
 **Paper[\[OpenReview\]](https://openreview.net/forum?id=NnuYZ1el24C&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DNeurIPS.cc%2F2022%2FConference%2FAuthors%23your-submissions))[\[ArXiv\]](https://arxiv.org/abs/2206.11403))/Code[\[GitHub\]](https://github.com/martius-lab/cee-us)**
 
